@@ -1,0 +1,16 @@
+---
+# tasks file for apt-upgrade
+- name: apt upgrade
+  apt:
+    update_cache: yes
+    upgrade: dist
+    purge: yes
+    autoremove: yes
+    autoclean: yes
+  when: ansible_os_family == 'Debian'
+
+- name: apt upgrade
+  yum:
+    update_cache: yes
+    state: latest
+  when: ansible_os_family == 'RedHat'
