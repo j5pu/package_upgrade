@@ -9,7 +9,7 @@
     autoclean: yes
   when: ansible_os_family == 'Debian'
 
-- name: apt upgrade
+- name: yum upgrade
   yum:
     update_cache: yes
     state: latest
